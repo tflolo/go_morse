@@ -1,11 +1,12 @@
 package main
 
 import (
-	"strings"
+	"fmt"
 	"github.com/gordonklaus/portaudio"
 	"math"
+	"os"
+	"strings"
 	"time"
-	"fmt"
 )
 
 var morseAlphabet = map[string]string{
@@ -110,8 +111,9 @@ func toMorse(str string, s *stereoSine) {
 }
 
 func main() {
+	args := os.Args[1:]
 	portaudio.Initialize()
 	defer portaudio.Terminate()
-	toMorse("iver", newStereoSine(3000, 5000, 44100))
+	toMorse(args[0], newStereoSine(3000, 5000, 44100))
 
 }
