@@ -9,4 +9,9 @@ run program pass inn text as arg to convert to morse
 example: ./morse test
 example multi: ./morse "multi text"
 
+output:
+```
+.. ...- . .-. 
 
+```
+and audio
